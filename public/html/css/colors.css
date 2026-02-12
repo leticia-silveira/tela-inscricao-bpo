@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;900&display=swap');
+
+/* ============================================================
+    CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+    COX | Design System
+   ============================================================
+   */
+
+:root {    
+    --coral-energia: #ED696A;
+    --coral-claro: #F5ACA4;
+    --coral-escuro: #A13838;
+
+    --azul-planeta: #283198;
+    --azul-dark:#282844;
+
+    --gris-luna-claro: #EAEDED;
+    --gris-luna-escuro: #43464F;
+    --gris-medio: #C3C8D2; 
+    --gris-estelar: #999999;
+
+    --blanco: #FFFFFF;
+    --negro: #000000;
+
+    --color-error: #FF0101;
+    
+    --font-primary: 'Red Hat Display', sans-serif;
+
+    /*Uso no Layout*/
+    --bg-page: var(--gris-luna-claro);
+    --primary-color: var(--azul-planeta);
+    --primary-color-dark: var(--azul-dark);
+    --accent-color: var(--coral-energia);
+    --accent-dark: var(--coral-escuro);
+    --text-main: var(--gris-luna-escuro);
+    
+}
