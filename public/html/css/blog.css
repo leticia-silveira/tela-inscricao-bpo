@@ -518,6 +518,10 @@ p:empty {
     align-items: center;
 }
 
+#contato{
+    scroll-margin-top: 200px;
+}
+
 .link {
     text-decoration: none;
     list-style: none;
@@ -576,9 +580,10 @@ p:empty {
 }
 
 .footer {
-    background-color: var(--corBarra);
+    background-color: var(--primary-color)!important;
     padding: 2%;
     margin-top: 5%;
+    color:var(--gris-estelar);
 }
 
 .close-menu {
@@ -1035,8 +1040,10 @@ main.vagas {
 
 
     .frameMap {
-        width: 50%;
+        width: 100%;
         margin-top: 1rem;
+        margin-left: auto; 
+        margin-right: auto
 
     }
 

@@ -1,16 +1,22 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+
+<html lang="pt-br">
     
-@section('title', 'Inscrição BPO - Projeto ' . $projeto)
- 
-@push('styles')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição BPO - Projeto {{ $projeto }}</title>
+
     <link rel="stylesheet" href="{{ asset('html/css/inscricaoBpo.css') }}">
-    
-@endpush
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    @vite(['resources/css/inscricaoBpo.css', 'resources/js/app.js'])
+</head>
 
-@section('conteudo')
-<div x-data="{ 
+<body x-data="{ 
     passo: {{ $errors->any() ? 1 : 1 }},
     tentouAvancar: false, 
     
@@ -95,8 +101,6 @@
     }
 }">
 
-
-
     <div class="wrapper-principal">
         
         <div class="top-section-wrapper">
@@ -107,9 +111,9 @@
                         <p class="subtitulo">Inscrição – Projeto {{ $projeto }}</p>
                     </div>
                     <!-- Logo COX -->
-                    <!-- <div class="header-logo">
+                    <div class="header-logo">
                         <img src="{{ asset('img/logotipo-cox.png') }}" alt="Logo Cox">
-                    </div> -->
+                    </div> 
                 </div>
             </header>
 
@@ -547,8 +551,6 @@
         </main>
     </div>
 
-
-    
    
-</div>
-@endsection
+</body>
+</html>

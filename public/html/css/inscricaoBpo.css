@@ -24,7 +24,7 @@ html, body {
 
 body {    
     font-family: var(--font-primary); 
-    /* background-color: var(--bg-page); */
+    background-color: var(--bg-page); 
     color: var(--text-main);
 }
 
@@ -71,12 +71,12 @@ body {
    ============================================================ */
 .header-bpo-personalizado {
     width: 100%;
-    padding: 0px ;
+    padding-bottom: 50px ;
 }
 
 .header-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -84,8 +84,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    text-align: center;
-    align-items: center;
     
 }
 
@@ -529,18 +527,19 @@ body {
 
 .success-container {
     text-align: center;
-    /* padding: 20px; */
+    padding: 50px;
     font-family: var(--font-primary)
 }
 .card-sucesso {
     background-color: #ffffff;
     padding: 40px;
-    /*border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);  Sombra suave para dar profundidade */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
     max-width: 650px;
     width: 100%;
     text-align: center;
-    /* border: 1px solid #e5e7eb; */
+    border: 1px solid #e5e7eb;
+
 }
 .success-icon {
     font-size: 4rem;
