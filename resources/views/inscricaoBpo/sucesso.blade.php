@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrição finalizada</title>
+@extends('layouts.app')
+    
+@section('title', 'Inscrição finalizada')
+@push('styles')
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{ asset('html/css/inscricaoBpo.css') }}">
-</head>
-<body>
+@endpush
+@section('conteudo')
     <div class="wrapper-principal">
         <main class="success-container">
             <div class="card-sucesso">
@@ -28,5 +26,4 @@
             </div>
         </main>
     </div>
-</body>
-</html>
+@endsection

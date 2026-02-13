@@ -113,7 +113,7 @@
                         <p class="txtReqSub">DISPOSIÇÕES GERAIS</p>
                         <p>{!! $p->disposicoesGerais !!}</p>
                     </div>
-                    @endforeach
+                    
                 </section>
 
             </div>
@@ -142,6 +142,8 @@
                 </div>
             </div>
             @endif
+
+            @endforeach
         </section>
 @endsection
 
