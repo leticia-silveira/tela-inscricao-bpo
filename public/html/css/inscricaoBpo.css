@@ -528,8 +528,9 @@ body {
 .success-container {
     text-align: center;
     padding: 50px;
-    font-family: var(--font-primary)
+    font-family: var(--font-primary);
 }
+
 .card-sucesso {
     background-color: #ffffff;
     padding: 40px;
@@ -676,5 +677,12 @@ body {
         display: block;
     }
 
+    .success-container {
+        padding: 20px;
+    }
+
+    .card-sucesso{
+        padding: 20px;
+    }
 
 }
