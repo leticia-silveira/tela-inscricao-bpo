@@ -165,7 +165,7 @@ p:empty {
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 10 10px 25px -5px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
 }
 
@@ -231,21 +231,34 @@ p:empty {
 }
 
 .projeto-card {
-    transition: all 0.3s ease;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 10px;
 }
 
 .projeto-card .card{
-    border: none !important;
+    border: 1px solid #f2f2f2 !important; 
+    background-color: #ffffff !important; 
+    border-radius: 15px !important;
+    padding: 1.5%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    height: 100%;
 }
 
-.projeto-card .card, 
-.projeto-card .card.h-100 {
-    border: 0 !important;
-    border-style: none !important;
-    outline: none !important;
-    box-shadow: none !important; 
-    background-color: transparent !important; /
+.projeto-card:hover .card {
+    border: 1px solid #e0e0e0 !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important; 
+    transform: translateY(-5px);
 }
+
+.projeto-card .imgProjeto {
+    border-radius: 12px;
+    width: 100%;
+}
+
+
 
 .textImagem-custom {
     font-weight: 600;
@@ -435,7 +448,7 @@ p:empty {
     width: 100%;
     height: 15vw;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 }
 
 .containerpjt {
@@ -808,6 +821,20 @@ main.vagas {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.icone-contato-img {
+    width: 22px; 
+    height: auto;
+    margin-right: 5px; 
+    vertical-align: middle; /* Alinha verticalmente com o link */
+    display: inline-block;
+}
+
+.divContato {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .vagaIcones {

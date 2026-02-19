@@ -68,7 +68,7 @@
                         <h6 class="mx-auto mt-1">Sua carreira merece esse impulso!</h6>
                     </div>
 
-                    <div class="row g-4 py-4" id="projetos-lista" data-aos="fade-right">
+                    <div class="row gx-5 gy-4 py-4" id="projetos-lista" data-aos="fade-right">
 
                         @php
                         $projetosAtivosCount = 0;
@@ -83,7 +83,7 @@
                         @foreach($projetos as $index => $p)
                         @if($p->statusProjeto != 0)
 
-                        <div class="col-12 col-md-6 col-lg-4 rounded-3 py-2 overflow-hidden feature-card transition duration-300 feature-card projeto-card {{ $activeIndex >= 3 ? 'escondido' : '' }}" id="projeto-{{ $activeIndex }}" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-12 col-md-6 col-lg-4 rounded-3 py-2 mb-4 overflow-hidden feature-card transition duration-300 feature-card projeto-card {{ $activeIndex >= 3 ? 'escondido' : '' }}" id="projeto-{{ $activeIndex }}" data-aos="fade-up" data-aos-delay="300">
                         
                             <div class="card h-100 shadow-sm p-0">
                                 <img src="{{ $p->imagem }}"
@@ -142,12 +142,14 @@
 
                         
                         <div class="divContato">
-                            <i class="fa-solid fa-envelope color-primary"></i>
+                            <!-- <i class="fa-solid fa-envelope color-primary"></i> -->
+                             <img src="{{ asset('html/img/envelope.png') }}" alt="E-mail" class="icone-contato-img">
                             <a href="mailto:selecao@abbr.agr.br" class="nav-link nav-link-contato textTamanho">selecao@abbr.agr.br</a>
                         </div>
 
                         <div class="divContato">
-                            <i class="fa-solid fa-phone color-primary"></i>
+                            <!-- <i class="fa-solid fa-phone color-primary"></i> -->
+                             <img src="{{ asset('html/img/telefone.png') }}" alt="Telefone" class="icone-contato-img">
                             <a href="tel:+551936023200" class="nav-link nav-link-contato textTamanho">(19) 3602-3200</a>
                         </div>
                         
