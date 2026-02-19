@@ -194,6 +194,10 @@ p:empty {
     font-weight: bold;
 }
 
+.txtContato.bpo{
+    font-size: 28px;
+}
+
 #imagemPrincipal {
     background-image: url('/html/img/capa.png');
     background-repeat: no-repeat;

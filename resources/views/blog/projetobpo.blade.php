@@ -27,7 +27,7 @@
                 <section>
                     @foreach ($projetos as $p)
                     <div>
-                        <h5 class="txtContato">{{$p->nomeBpo}}</h5>
+                        <h5 class="txtContato bpo">{{$p->nomeBpo}}</h5>
                         <p class="txtCidade">CIDADE: {{$p->cidade}} </p>
                     </div>
 
