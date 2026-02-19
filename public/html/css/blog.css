@@ -821,6 +821,7 @@ main.vagas {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 80px;
 }
 
@@ -968,6 +969,10 @@ main.vagas {
 
     .divContato{
         flex-direction: row;
+    }
+
+    .imgIcone{
+        height: 50%;
     }
 }
 
