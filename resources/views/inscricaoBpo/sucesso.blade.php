@@ -21,8 +21,8 @@
                 </div>
                 
                 
-
-                <a href="{{ url('/projeto/' . $tipo) }}" class="btn-back-success">
+                <!-- <a href="{{ url('/projeto/' . $tipo) }}" class="btn-back-success"> -->
+                <a href="{{ url('/') }}" class="btn-back-success">
                     Voltar para o início
                 </a>
             </div>

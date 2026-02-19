@@ -6,6 +6,9 @@ use App\Http\Controllers\InscricaoController;
 
 Route::get('/', [InscricaoController::class, 'home'])->name('menuInicial');
 
+Route::get ('/vaga', [InscricaoController::class, 'vagas'])->name('vagas');
+Route::get ('/vaga/requisitos/{id}', [InscricaoController::class, 'requisitos'])->name('requisitos');    
+
 // Exibe a página de detalhes do curso (ex: /projeto/trator)
 Route::get('/projeto/{tipo}', [InscricaoController::class, 'projeto'])->name('projeto.detalhes');
 

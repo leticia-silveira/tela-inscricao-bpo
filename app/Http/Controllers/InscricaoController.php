@@ -262,7 +262,7 @@ class InscricaoController extends Controller
         }
 
         $projetos = [$p]; 
-        return view('blog.components.projetobpo', compact('projetos', 'p', 'tipo'));
+        return view('blog.projetobpo', compact('projetos', 'p', 'tipo'));
     }
 
 
@@ -300,6 +300,125 @@ class InscricaoController extends Controller
         }
 
         // 3. RETORNO PARA O NOVO CAMINHO
-        return view('blog.components.inicio', compact('projetos'));
+        return view('blog.inicio', compact('projetos'));
+
+        
     }
+
+
+
+    public function vagas()
+    {
+        $vagas = DB::select('SELECT *, v.descricaoFuncao AS descricaoVaga, 
+            CASE 
+                /* Se a data for menor ou igual a hoje, vamos devolver 0 
+                (o HTML original escreverá "Faltam 0 dias") */
+                WHEN v.dataLimite <= CURRENT_DATE() THEN "0"
+                ELSE DATEDIFF(v.dataLimite, CURRENT_DATE()) 
+            END AS quantidadeDias,
+            (SELECT COUNT(*) FROM docPessoal 
+                WHERE descricaoFuncao = f.descricaoFuncao 
+                AND v.descricaoLocal = f.descricaoLocal) AS inscritos
+            FROM docvagas AS v 
+            INNER JOIN docFuncao AS f ON v.Funcao_id = f.idFuncao
+            WHERE v.statusVaga != 0'); 
+
+        return view('blog.vagas', compact('vagas'));
+    }
+
+    // public function requisitos($id)
+    // {
+    //     // 1. Ajuste na Query principal para aceitar as datas de 2025 e manter o padrão de dias
+    //     $vagas = DB::select('SELECT *, v.descricaoFuncao AS descricaoVaga, v.descricaoLocal, 
+    //         CASE 
+    //             WHEN v.dataLimite < CURRENT_DATE() THEN "Finalizado"
+    //             WHEN v.dataLimite = CURRENT_DATE() THEN "Último dia"
+    //             ELSE DATEDIFF(v.dataLimite, CURRENT_DATE()) 
+    //         END AS quantidadeDias,
+    //         (SELECT COUNT(*) FROM docPessoal 
+    //             WHERE descricaoFuncao = f.descricaoFuncao 
+    //             AND v.descricaoLocal = f.descricaoLocal) AS inscritos
+    //         FROM docvagas AS v 
+    //         INNER JOIN docFuncao AS f ON v.Funcao_id = f.idFuncao
+    //         /* Removemos o "dataLimite > now()" para a vaga não dar erro 404 por estar vencida */
+    //         WHERE v.statusVaga != 0 AND v.idVaga = ?', [$id]);
+
+    //     if (empty($vagas)) {
+    //         abort(404);
+    //     }
+
+    //     // 2. Tratamento de Benefícios (Mantendo sua lógica original)
+    //     $benef = str_replace(['[', ']'], '', $vagas[0]->beneficios);
+        
+    //     $beneficios = [];
+    //     if (!empty($benef)) {
+    //         // Proteção simples contra SQL Injection se $benef vier vazio ou malformado
+    //         $beneficios = DB::select("SELECT * FROM docbeneficios WHERE idBeneficio IN ($benef)");
+    //     }
+
+    //     // 3. URLs Temporárias do S3
+    //     $filePath = 'imagens/';
+    //     foreach ($beneficios as $beneficio) {
+    //         if (!empty($beneficio->imagem)) {
+    //             $beneficio->imagem = Storage::disk('s3')->temporaryUrl(
+    //                 $filePath . $beneficio->imagem,
+    //                 now()->addMinutes(5)
+    //             );
+    //         }
+    //     }
+
+    //     if (!empty($vagas[0]->imagem)) {
+    //         $vagas[0]->imagem = Storage::disk('s3')->temporaryUrl(
+    //             $filePath . $vagas[0]->imagem,
+    //             now()->addMinutes(5)
+    //         );
+    //     }
+
+    //     return view('blog.vagarequisitos', compact('vagas', 'beneficios'));
+    // }
+
+    public function requisitos($id)
+    {
+        // ... query das vagas permanece a mesma ...
+        $vagas = DB::select('SELECT *, v.descricaoFuncao AS descricaoVaga, v.descricaoLocal, 
+             CASE 
+                 WHEN v.dataLimite < CURRENT_DATE() THEN "Finalizado"
+                 WHEN v.dataLimite = CURRENT_DATE() THEN "Último dia"
+                 ELSE DATEDIFF(v.dataLimite, CURRENT_DATE()) 
+             END AS quantidadeDias,
+             (SELECT COUNT(*) FROM docPessoal 
+                 WHERE descricaoFuncao = f.descricaoFuncao 
+                 AND v.descricaoLocal = f.descricaoLocal) AS inscritos
+             FROM docvagas AS v 
+             INNER JOIN docFuncao AS f ON v.Funcao_id = f.idFuncao
+             /* Removemos o "dataLimite > now()" para a vaga não dar erro 404 por estar vencida */
+             WHERE v.statusVaga != 0 AND v.idVaga = ?', [$id]);
+
+        if (empty($vagas)) {
+            abort(404);
+        }
+
+        // 1. Busca os benefícios
+        $benef = str_replace(['[', ']'], '', $vagas[0]->beneficios);
+        $beneficios = [];
+        if (!empty($benef)) {
+            $beneficios = DB::select("SELECT * FROM docbeneficios WHERE idBeneficio IN ($benef)");
+        }
+
+        // 2. Gerar o caminho para a pasta local de imagens do projeto
+        foreach ($beneficios as $beneficio) {
+            if (!empty($beneficio->imagem)) {
+                // Se as imagens estiverem em public/html/img/beneficios/
+                $beneficio->imagem = asset('html/img/' . $beneficio->imagem);
+            }
+        }
+
+        // Se a vaga também tiver imagem local
+        if (!empty($vagas[0]->imagem)) {
+            $vagas[0]->imagem = asset('html/img/' . $vagas[0]->imagem);
+        }
+
+        return view('blog.vagarequisitos', compact('vagas', 'beneficios'));
+    }
+
 }

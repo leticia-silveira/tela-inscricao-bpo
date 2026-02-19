@@ -9,9 +9,11 @@
     --corBranca: #FFFFFF
 }
 
-body {
-    font-family: var( --font-primary);
+body, *{
+    font-family: var( --font-primary)!important;
 }
+
+
 
 /* Tela inicial Blog */
 
@@ -35,7 +37,7 @@ p:empty {
 }
 
 .navbar-toggler-icon i {
-    color: var(--corTextoCinza);
+    color: var(--text-main);
     font-size: 1.5rem;
 }
 
@@ -45,7 +47,7 @@ p:empty {
 }
 
 .bg-custom {
-    background-color: var(--corBarra);
+    background-color: var(--blanco);
 }
 
 .nav-link-custom {
@@ -84,7 +86,7 @@ p:empty {
 
 .btn-custom {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--blanco);
     flex: 1 1 0px;
     min-width: 0;
     padding: 8px 18px;
@@ -121,12 +123,12 @@ p:empty {
 
 .btn-vertodos:hover {
     background-color: var(--primary-color-dark);
-    color: var(--corBranca);
+    color: var(--blanco);
     border: 1px solid var(--primary-color-dark);
 }
 
 .btn-custom a {
-    color: white;
+    color: var(--blanco);
     text-decoration: none;
     display: block;
     font-size: 14px;
@@ -135,17 +137,21 @@ p:empty {
 
 .btn-custom:hover {
     background-color: var(--primary-color-dark);
-    color: var(--corBranca);
+    color: var(--blanco);
 }
 .btn-custom.cad:hover {
     background-color: var(--accent-dark);
-    color: var(--corBranca);
+    color: var(--blanco);
 }
 
 .navbar-custom {
     display: flex;
     padding-left: 10;
 
+}
+
+.color-primary{
+    color: var(--primary-color);
 }
 
 .endereco {
@@ -165,9 +171,15 @@ p:empty {
 
 
 .txtTitulo {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 20px;
+    color: var(--primary-color-dark);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.txtTituloRequisitos{
+    color: var(--primary-color-dark);
+    font-weight: bold;
+    font-size: 32px;
 }
 
 .txtTitulo-custom {
@@ -207,8 +219,8 @@ p:empty {
     background-image: none;
     height: auto;
     width: 100%;
-    padding: 70px 0 50px 0;
-    background-color: #ffffff;
+    padding: 100px 0 50px 0;
+    background-color: var(--blanco);
     
     
     
@@ -305,13 +317,13 @@ p:empty {
 }
 
 .containerProjeto {
-    border: 1px solid var(--corBarra);
+    border: 1px solid var(--blanco);
     width: 42%;
     flex: 0 0 48%;
     align-items: center;
     box-sizing: border-box;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 10px;
 }
 
@@ -438,7 +450,7 @@ p:empty {
     padding: 10px;
     width: 60%;
     text-align: center;
-    color: var(--corBranca);
+    color: var(--blanco);
     font-size: 14px;
 }
 
@@ -448,8 +460,8 @@ p:empty {
 
 .btnPequeno:hover {
     background-color: var(--primary-color-dark);
-    border: 0.5px solid var(--corBranca);
-    color: var(--corBranca);
+    border: 0.5px solid var(--blanco);
+    color: var(--blanco);
 }
 
 
@@ -474,14 +486,14 @@ p:empty {
     padding: 10px;
     width: 50%;
     text-align: center;
-    color: var(--corBranca);
+    color: var(--blanco);
     font-size: 14px;
 }
 
 .btnPequenoVaga:hover {
     background-color: var(--primary-color-dark);
-    border: 0.5px solid var(--corBranca);
-    color: var(--corBranca);
+    border: 0.5px solid var(--blanco);
+    color: var(--blanco);
 }
 
 .containerContato {
@@ -492,7 +504,7 @@ p:empty {
     margin: 80px auto;
     border-radius: 5px;
     padding: 20px 40px;
-    background-color: #ffffff;
+    background-color: var(--blanco);
 }
 
 .divContato {
@@ -504,8 +516,17 @@ p:empty {
 }
 
 .divContato i {
-    font-size: 24px;
-    line-height: 0;
+    font-size: 24px !important;
+    width: 30px;
+    display: inline-block;
+    line-height: 1;
+}
+/* Garante que os ícones do Font Awesome usem a fonte correta e apareçam */
+.fa-solid, .fa-phone, .fa-envelope {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    display: inline-block !important;
+    line-height: 1 !important; /* Nunca use 0 para ícones */
 }
 
 .nav-link-contato {
@@ -529,9 +550,9 @@ p:empty {
 }
 
 .nav-link-contato {
-    color: var(--corTextoCinzaClaro) !important;
+    color: var(--gris-estelar) !important;
     transition: color 0.3s;
-    bottom: 1px
+    bottom: 1px;
 }
 
 .nav-link-contato:hover {
@@ -624,38 +645,102 @@ main.vagas {
 
 .containerVaga {
     flex: 0 0 calc(32% - 25px);
-    /* 3 itens por linha */
     max-width: calc(32% - 25px);
-    border: 1px solid var(--corBarra);
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent; 
+    background-color: var(--blanco);
+    
     margin-bottom: 10px;
-    border-radius: 5px;
-    padding: 1%;
+    border-radius: 15px;
+    padding: 1.5%;
     box-sizing: border-box;
     height: auto;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #f2f2f2 !important; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03); 
+}
+
+.containerVaga:hover {
+    border: 1px solid var(--gris-luna-claro);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+    transform: translateY(-5px); 
 }
 
 .txt {
     color: var(--corTextoCinzaClaro);
 }
 
-.input {
-    border: 1px solid var(--corBarra);
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-    height: 40px;
-    border-radius: 5px;
-    width: 100vh;
-    padding: 10px;
+.input-vaga {
+    width: 100%;
+    height: 45px;
+    border: 1.5px solid #e0e0e0 !important;
+    border-radius: 25px !important;
+    padding: 0 45px 0 20px !important; /* Espaço para o ícone na direita */
+    outline: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #fff;
 }
 
-.input:focus {
-    outline: none;
+
+.input-vaga:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(40, 49, 152, 0.1); 
+    background-color: #fff;
 }
+
+
+.input-vaga::placeholder {
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+.inputPesquisar {
+    position: relative;
+    width: 35%;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.inputPesquisar button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: 10px !important; /* Um pouco mais para dentro da curva */
+    height: 40px !important; 
+    width: 40px !important;
+    background: transparent !important;
+}
+
+.inputPesquisar button:hover {
+    /* background-color: rgba(0, 0, 0, 0.05) !important; */
+    color: var(--primary-color) ;
+}
+.inputPesquisar button svg {
+    width: 16px !important;
+    height: 16px !important;
+    fill: #6c757d; /* Cor cinza padrão de busca */
+}
+
+/* Efeito visual ao interagir */
+.inputPesquisar button:hover svg {
+    fill: var(--primary-color); /* Muda para a cor da sua marca no hover */
+    transform: scale(1.1); /* Dá um leve destaque */
+}
+
+
+
 
 .search-container {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px !important; /* Bordas bem arredondadas (Pill shape) */
+    transition: all 0.3s ease;
 }
+
+
 
 .search-icon {
     position: absolute;
@@ -667,6 +752,7 @@ main.vagas {
 .listaVagas {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 25px;
     flex-wrap: wrap;
     margin-bottom: 5%
@@ -675,6 +761,7 @@ main.vagas {
 .pesquisa {
     display: flex;
     justify-content: space-between;
+    margin: 15px auto;
 }
 
 .txtTituloVaga {
@@ -686,6 +773,13 @@ main.vagas {
 }
 
 .btnVaga {
+    width: 90%;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+}
+
+.btnVaga.cad{
     width: 100%;
     background-color: var(--primary-color);
     border: none;
@@ -694,15 +788,15 @@ main.vagas {
 
 .btnVaga:hover {
     background-color: var(--primary-color-dark);
-    border: 0.5px solid var(--corBranca);
-    color: var(--corBranca) !important;
+    border: 0.5px solid var(--blanco);
+    color: var(--blanco) !important;
     ;
     text-decoration: none;
     list-style: none;
 }
 
 .textVaga {
-    color: var(--corBranca) !important;
+    color: var(--blanco) !important;
     text-decoration: none;
     list-style: none;
     font-size: 14px;
@@ -717,18 +811,26 @@ main.vagas {
 }
 
 .vagaIcones {
-    width: 25%;
+    /* width: 25%;
     height: auto;
     height: 130px; 
     display: flex;
     align-items: center;
     flex-direction: column;
-    text-align: center;
+    text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
 }
 
 .imgIcone {
-    padding: 15px 0px;
-    width: 45%;
+    /* padding: 25px 0px 15px 0px;
+    width: 60%; */
+    height: 40px; /* Trava a altura para manter a linha visual */
+    width: auto;
+    margin-bottom: 5px;
+    object-fit: contain;
 }
 
 .tempoVaga {
@@ -785,11 +887,7 @@ main.vagas {
     }
 
 
-.inputPesquisar {
-    position: relative;
-    width: 30%;
-    margin-right: 6%;
-}
+
 
 
 /** SEÇÃO TRABALHE CONOSCO**/
@@ -1132,22 +1230,31 @@ main.vagas {
 
 /* Requisitos das vagas */
 .requisitos {
-    padding: 50px;
-    margin-top: 30px;
+    max-width: 1200px;
+    margin: 15px auto 0 auto;
+    padding: 20px
   
 }
 
 .txtCidade {
-    color: var(--corTextoCinza);
+    color: var(--gris-estelar);
     font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 30px;
 }
 
 .txtReqSub {
     color: var(--primary-color);
     font-family: var(--font-primary);
     font-size: 18px;
-    font-weight: 600;
+    font-weight: bold;
 }
+
+span{
+    color: var(--text-main) !important;
+    font-family: var(--font-primary) !important;
+}
+
 
 .txtBeneficios {
     color: var(--corTextoCinzaClaro);
@@ -1177,22 +1284,43 @@ main.vagas {
     width: 45px;
 }
 
-
 .iconesBeneficios {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: auto;
-    justify-content: space-around;
     flex-wrap: wrap;
-    width: 80%;
-    padding: 2%;
+    justify-content: center;
+    /* Ajuste o gap para não ultrapassar os 100% da largura somando com os itens */
+    gap: 30px 0px; 
+    width: 95%; /* Aumentamos um pouco a largura total para dar respiro */
+    margin: 40px auto;
 }
 
-.iconesBeneficios>* {
-    flex-basis: 25%;
+.beneficio-item, .iconesBeneficios > div {
+    /* Força 4 colunas: 100% / 4 = 25% */
+    flex: 0 0 25%; 
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding: 10px; /* Padding interno para os textos não colarem */
+}
+
+/* Padronização dos Ícones */
+.iconesBeneficios img, .beneficio-item img {
+    height: 45px !important; /* Altura fixa para alinhar todos */
+    width: auto !important;
+    max-width: 60px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.txt-beneficio {
+    font-size: 12px; /* Reduzido levemente para caber melhor em 4 colunas */
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
 }
 
 
@@ -1226,7 +1354,7 @@ main.vagas {
 
 /* Tela Questionário */
 .inputQuest {
-    border: 1px solid var(--corBarra);
+    border: 1px solid var(--blanco);
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     height: 40px;
     border-radius: 5px;
@@ -1235,7 +1363,7 @@ main.vagas {
 }
 
 .inputQuestPeq {
-    border: 1px solid var(--corBarra);
+    border: 1px solid var(--blanco);
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     height: 40px;
     border-radius: 5px;
@@ -1271,7 +1399,10 @@ main.vagas {
 }
 
 
-
+.container-bpo-img{
+    margin-top: 20px;
+    padding-top: 10px;
+}
 
 .projeto-banner-container {
     width: 100%;
@@ -1337,6 +1468,16 @@ main.vagas {
      
       margin-top: 30px;
    }
+
+
+   .iconesBeneficios > div {
+        flex: 0 0 50%; /* No celular vira 2 colunas */
+    }
+    .iconesBeneficios {
+        padding: 0 15px !important; /* Seu padding de 15px lateral */
+    }
+    
+    
 }
 
 @media (max-width: 480px) {
