@@ -113,8 +113,8 @@
             @if($p->status !== 'Finalizado')
             <div class="containerCandidatar">
                 <div class="btnCadastrar">
-                    <button class="btnVaga cad" onclick="window.location.href='/projetos/{{$p->FormId}}/questionario'">
-                        <a href="/projetos/{{ $p->idProjeto }}/questionario" class="nav-link textVaga">Cadastrar</a>
+                    <button class="btnCandidatar" onclick="window.location.href='/projetos/{{$p->FormId}}/questionario'">
+                        <a href="/projetos/{{ $p->idProjeto }}/questionario" class="nav-link textVaga">Candidatar</a>
                     </button>
                 </div>
             </div>

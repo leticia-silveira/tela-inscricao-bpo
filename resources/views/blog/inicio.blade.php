@@ -124,7 +124,7 @@
         </section>
 
         <!-- Fale conosco -->
-        <section id="Contato" >
+        <section id="contato" >
             <div class="containerContato">
                 <div class="esquerdaContato">
 

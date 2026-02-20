@@ -92,7 +92,8 @@
 
                     </div>
                     <div class="divVaga">
-                        <i class="fa-regular fa-calendar"></i>
+                        <!-- <i class="fa-regular fa-calendar"></i> -->
+                         <img src="{{ asset('html/img/calendario.png') }}" alt="E-mail" class="icone-contato-img">
                         @if ($c->quantidadeDias == 1 )
                         <p style="font-size: 14px;">Falta {{$c->quantidadeDias}} dia para encerrar a candidatura </p>
                         @else
@@ -123,8 +124,8 @@
 
                     <div class="containerParteBaixoCurriculo">
                         <div class="btnCadastrar">
-                            <button  class="btnVaga cad">
-                                <a href="/curriculo/criar" class="nav-link textVaga">CADASTRAR</a>
+                            <button  class="btnCandidatar">
+                                <a href="/curriculo/criar" class="nav-link textVaga">CANDIDATAR</a>
                             </button>
                         </div>
                     </div>

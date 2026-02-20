@@ -69,7 +69,7 @@
             <div>
                 <div class="containerCandidatar">
                     <div class="btnCadastrar">
-                        <button class="btnVaga cad">
+                        <button class="btnCandidatar">
                             <a href="/curriculo/criar?funcao={{ urlencode($c->descricaoVaga) }}&local={{ urlencode($c->descricaoLocal) }}&vaga_especifica=1" class="nav-link textVaga">
                                 CANDIDATAR
                             </a>

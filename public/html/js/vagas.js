@@ -1,3 +1,8 @@
+
+
+/******* */
+
+
 function comandoExportar() {
     // Seleciona o elemento de entrada pelo seu ID
     var exportarInput = document.getElementById('exportar');

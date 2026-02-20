@@ -509,7 +509,7 @@ p:empty {
 
 .btnPequenoVaga:hover {
     background-color: var(--primary-color-dark);
-    border: 0.5px solid var(--blanco);
+    text-decoration: none;
     color: var(--blanco);
 }
 
@@ -796,16 +796,23 @@ main.vagas {
     border-radius: 8px;
 }
 
-.btnVaga.cad{
+.btnCandidatar{
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     border: none;
     border-radius: 8px;
 }
+.btnCandidatar:hover{
+    background-color: var(--accent-dark);
+    color: var(--blanco) !important;
+    ;
+    text-decoration: none;
+    list-style: none;
+}
+
 
 .btnVaga:hover {
     background-color: var(--primary-color-dark);
-    border: 0.5px solid var(--blanco);
     color: var(--blanco) !important;
     ;
     text-decoration: none;

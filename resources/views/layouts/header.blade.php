@@ -47,20 +47,20 @@
                         <a class="nav-link text-dark fw-medium hover-primary transition" href="/">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-medium hover-primary transition" href="#projetos">Projetos</a>
+                        <a class="nav-link text-dark fw-medium hover-primary transition" href="/#projetos">Projetos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-medium hover-primary transition" href="#trabalheConosco">Trabalhe Conosco</a>
+                        <a class="nav-link text-dark fw-medium hover-primary transition" href="/#imagemCarreiras">Trabalhe Conosco</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-medium hover-primary transition" href="#Contato">Fale Conosco</a>
+                        <a class="nav-link text-dark fw-medium hover-primary transition" href="/#contato">Fale Conosco</a>
                     </li>
                 </ul>
 
                 <!-- Botões no mobile -->
                 <div class="d-flex flex-column flex-md-row justify-content-center mt-2 mt-md-0">
                     <a href="/menu/logar" class="btn btn-custom mr-4 mb-2">Entrar</a>
-                    <a href="/curriculo/criar" class="btn btn-custom cad mr-4 mb-2">Cadastrar</a>
+                    <a href="/curriculo/criar" class="btn btn-custom cad mr-4 mb-2">Candidatar</a>
                 </div>
             </div>
         </nav>

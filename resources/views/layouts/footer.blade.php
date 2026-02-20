@@ -9,7 +9,7 @@
                 <ul class="list-unstyled">
                     <li class="mb-2"><a href="/" class="text-white text-decoration-none opacity-75">Início</a></li>
                     <li class="mb-2"><a href="/#projetos" class="text-white text-decoration-none opacity-75">Projetos</a></li>
-                    <li class="mb-2"><a href="/" class="text-white text-decoration-none opacity-75">Trabalhe Conosco</a></li>
+                    <li class="mb-2"><a href="/#imagemCarreiras" class="text-white text-decoration-none opacity-75">Trabalhe Conosco</a></li>
                     <li class="mb-2"><a href="/#contato" class="text-white text-decoration-none opacity-75">Contato</a></li>
                 </ul>
             </div>
